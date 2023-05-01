@@ -24,3 +24,10 @@ services:
       - docker/application/environment.yml
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
+  integrationtests.webserver:
+    image: webdevops/nginx:alpine
+    volumes:
+      - ./docker/integrationtests:/app
+    ports:
+      - "80"
+      - "443"

@@ -16,22 +16,25 @@
   ~
   -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd"
          colors="true"
          bootstrap="./../vendor/autoload.php"
          cacheDirectory="../.cache/phpunit"
 >
-  <coverage>
+  <source>
     <include>
       <directory suffix=".php">./../src</directory>
     </include>
-  </coverage>
+  </source>
   <testsuites>
-    <testsuite name="all">
-      <directory>.</directory>
+    <testsuite name="Integration">
+      <directory suffix=".php">./Integration</directory>
     </testsuite>
   </testsuites>
   <php>
     <ini name="date.timezone" value="Europe/Berlin"/>
+    <env name="INTEGRATION_TESTS_SCHEME" value="http"/>
+    <env name="INTEGRATION_TESTS_HOST" value="integrationtests.webserver"/>
+    <env name="INTEGRATION_TESTS_PORT" value=""/>
   </php>
 </phpunit>
