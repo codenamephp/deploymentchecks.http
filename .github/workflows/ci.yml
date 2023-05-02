@@ -23,6 +23,5 @@ jobs:
       test-command: |
         INTEGRATION_TESTS_LOCAL_PORT_HTTP=80 \
         INTEGRATION_TESTS_LOCAL_PORT_HTTPS=443 \
-        INTEGRATION_TESTS_HOST=localhost \
         docker-compose up -d --wait --build --force-recreate --remove-orphans integrationtests.webserver && \
-        composer ci-all
+        INTEGRATION_TESTS_HOST=localhost composer ci-all

@@ -31,8 +31,6 @@ services:
     ports:
       - "${INTEGRATION_TESTS_LOCAL_PORT_HTTP:-}:80"
       - "${INTEGRATION_TESTS_LOCAL_PORT_HTTPS:-}:443"
-    environment:
-      - INTEGRATION_TESTS_HOST
     healthcheck:
       test: [ "CMD", "curl", "--fail", "http://localhost/test.html" ]
       interval: 1s
