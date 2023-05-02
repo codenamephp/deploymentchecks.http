@@ -15,17 +15,16 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http\integration\Data;
+namespace de\codenamephp\deploymentchecks\http\testHelper;
 
 use InvalidArgumentException;
 
 /**
  * Simple value object to access the base uri for the integration tests that may or may not be set using env vars.
  */
-final class BaseUri
-{
+final class BaseUri {
 
-    public function __construct(private ?string $scheme = null, private ?string $host = null, private ?int $port = null,)
+  public function __construct(private ?string $scheme = null, private ?string $host = null, private ?int $port = null,)
     {
         $this->scheme = $scheme ?? (string)getenv('INTEGRATION_TESTS_SCHEME');
         $this->host = $host ?? (string)getenv('INTEGRATION_TESTS_HOST');

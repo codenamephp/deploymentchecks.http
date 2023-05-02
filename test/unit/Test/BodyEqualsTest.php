@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http\unit\Test;
+namespace de\codenamephp\deploymentchecks\http\test\unit\Test;
 
 use de\codenamephp\deploymentchecks\http\Test\BodyEquals;
 use PHPUnit\Framework\TestCase;

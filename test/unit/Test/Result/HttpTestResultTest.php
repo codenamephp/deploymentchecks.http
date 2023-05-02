@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http\unit\Test\Result;
+namespace de\codenamephp\deploymentchecks\http\test\unit\Test\Result;
 
 use de\codenamephp\deploymentchecks\http\Test\Result\HttpTestResult;
 use PHPUnit\Framework\TestCase;

@@ -15,7 +15,7 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http\integration\ClientFactory;
+namespace de\codenamephp\deploymentchecks\http\test\unit\ClientFactory;
 
 use de\codenamephp\deploymentchecks\http\ClientFactory\GuzzleClient;
 use GuzzleHttp\Client;

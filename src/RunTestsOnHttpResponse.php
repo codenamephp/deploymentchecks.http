@@ -56,7 +56,7 @@ final class RunTestsOnHttpResponse implements CheckInterface, WithNameInterface 
   }
 
   public function run() : ResultInterface {
-    $response = $this->clientFactory->create()->send($this->request);
+    $response = $this->clientFactory->create()->sendRequest($this->request);
     return new HttpCheckResult($this->name(), ...array_map(fn(TestInterface $test) => $test->test($response), $this->tests));
   }
 }

@@ -5,14 +5,14 @@
             "src"
         ]
     },
-    "phpUnit": {
-        "configDir": "test",
-        "customPath": "tools\/phpunit.phar"
-    },
-    "logs": {
-        "text": ".logs/infection.log"
-    },
-    "mutators": {
-        "@default": true
-    }
+  "phpUnit": {
+    "configDir": "test",
+    "customPath": "tools\/phpunit.phar"
+  },
+  "logs": {
+    "text": ".logs/infection.log"
+  },
+  "mutators": {
+    "@default": true
+  }
 }

@@ -13,6 +13,7 @@
     "php": "^8.2",
     "guzzlehttp/guzzle": "^7.5",
     "psr/http-message": "1 - 2",
+    "psr/http-client": "^1.0",
     "codenamephp/deploymentchecks.base": "*"
   },
   "minimum-stability": "dev",
@@ -26,8 +27,9 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "de\\codenamephp\\deploymentchecks\\http\\unit\\": "test/unit",
-      "de\\codenamephp\\deploymentchecks\\http\\integration\\": "test/integration"
+      "de\\codenamephp\\deploymentchecks\\http\\testHelper\\": "testHelper",
+      "de\\codenamephp\\deploymentchecks\\http\\test\\unit\\": "test/unit",
+      "de\\codenamephp\\deploymentchecks\\http\\test\\integration\\": "test/integration"
     }
   },
   "repositories": [
@@ -48,7 +50,7 @@
     "psalm": "tools/psalm --threads=10 --long-progress",
     "composer-unused": "tools/composer-unused --no-progress --no-interaction",
     "composer-require-checker": "tools/composer-require-checker --no-interaction",
-    "infection": "XDEBUG_MODE=coverage tools/infection --min-msi=100 --min-covered-msi=100 --threads=4 --no-progress --show-mutations",
+    "infection": "XDEBUG_MODE=coverage tools/infection --min-msi=100 --min-covered-msi=100 --threads=4 --no-progress --show-mutations run",
     "ci-all": [
       "@phpunit",
       "@psalm",
