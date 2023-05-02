@@ -17,15 +17,19 @@
 
 namespace de\codenamephp\deploymentchecks\http\Test;
 
-use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 use de\codenamephp\deploymentchecks\http\Test\Result\HttpTestResult;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Runs a 1:1 comparison of the response body with the expected response text
+ *
+ * @psalm-api
+ */
 final class BodyEquals implements TestInterface {
 
   public function __construct(public readonly string $expectedResponseText) {}
 
-  public function test(ResponseInterface $response) : ResultInterface {
+  public function test(ResponseInterface $response) : HttpTestResult {
     return new HttpTestResult((string) $response->getBody() === $this->expectedResponseText, sprintf("Expected response text '%s' got '%s'", $this->expectedResponseText, $response->getBody()));
   }
 }
