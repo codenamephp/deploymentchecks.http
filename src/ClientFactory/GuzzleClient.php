@@ -20,9 +20,14 @@ namespace de\codenamephp\deploymentchecks\http\ClientFactory;
 use GuzzleHttp\Client;
 use Psr\Http\Client\ClientInterface;
 
-final class GuzzleClient implements ClientFactoryInterface {
+/**
+ * Factory that creates a guzzle client with the given config
+ *
+ * @psalm-api
+ */
+final readonly class GuzzleClient implements ClientFactoryInterface {
 
-  public function __construct(public readonly array $config = []) {}
+  public function __construct(public array $config = []) {}
 
   public function create() : ClientInterface {
     return new Client($this->config);
@@ -32,7 +37,7 @@ final class GuzzleClient implements ClientFactoryInterface {
     return new self($config);
   }
 
-  public function withMergedOptions(array $config) : self {
+  public function withMergedConfig(array $config) : self {
     return new self(array_merge($this->config, $config));
   }
 }

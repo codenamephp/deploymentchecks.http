@@ -19,7 +19,18 @@ namespace de\codenamephp\deploymentchecks\http\ClientFactory;
 
 use Psr\Http\Client\ClientInterface;
 
+/**
+ * Interface to create a client on the fly since we cannot have closures (which the middleware stack usually consists of) in the objects when we
+ * want to be compatible with the async package
+ *
+ * @psalm-api
+ */
 interface ClientFactoryInterface {
 
+  /**
+   * Creates a new PSR-18 client
+   *
+   * @return ClientInterface
+   */
   public function create() : ClientInterface;
 }
