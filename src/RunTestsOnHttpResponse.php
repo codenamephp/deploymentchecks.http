@@ -30,6 +30,8 @@ use Psr\Http\Message\RequestInterface;
  *
  * The client is created using the client factory as we cannot have a Guzzle Client set as default because the async package (which this is supposed to be
  * compatible to) uses serialize/unserialize which would fail with a guzzle client due to the closures as middleware in the stack.
+ *
+ * @psalm-api
  */
 final class RunTestsOnHttpResponse implements CheckInterface, WithNameInterface {
 
