@@ -15,14 +15,14 @@ on:
     paths-ignore:
       - '**.md'
 
-env:
-  INTEGRATION_TESTS_LOCAL_PORT_HTTP: 80
-  INTEGRATION_TESTS_LOCAL_PORT_HTTPS: 443
-  INTEGRATION_TESTS_HOST: localhost
-
 jobs:
   ci:
     uses: codenamephp/workflows.php/.github/workflows/ci.yml@1
     with:
       php-versions: '["8.2"]'
-      test-command: 'printenv && docker-compose up integrationtests.webserver -d --wait --build --force-recreate --remove-orphans && composer ci-all'
+      test-command: |
+        INTEGRATION_TESTS_LOCAL_PORT_HTTP=80 \
+        INTEGRATION_TESTS_LOCAL_PORT_HTTPS=443 \
+        INTEGRATION_TESTS_HOST=localhost \
+        docker-compose up integrationtests.webserver -d --wait --build --force-recreate --remove-orphans && \
+        composer ci-all'
