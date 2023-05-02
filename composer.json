@@ -26,8 +26,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "de\\codenamephp\\deploymentchecks\\http\\test\\": "test",
-        "de\\codenamephp\\deploymentchecks\\http\\integration\\": "test/integration"
+      "de\\codenamephp\\deploymentchecks\\http\\unit\\": "test/unit",
+      "de\\codenamephp\\deploymentchecks\\http\\integration\\": "test/integration"
     }
   },
   "repositories": [
