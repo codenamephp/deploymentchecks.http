@@ -30,6 +30,6 @@ final class BodyEquals implements TestInterface {
   public function __construct(public readonly string $expectedResponseText) {}
 
   public function test(ResponseInterface $response) : HttpTestResult {
-    return new HttpTestResult((string) $response->getBody() === $this->expectedResponseText, sprintf("Expected response text '%s' got '%s'", $this->expectedResponseText, $response->getBody()));
+    return new HttpTestResult((string) $response->getBody() === $this->expectedResponseText, sprintf("Expected response text '%s' got '%s'", $this->expectedResponseText, $response->getBody()->__toString()));
   }
 }

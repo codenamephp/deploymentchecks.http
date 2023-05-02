@@ -17,15 +17,19 @@
 
 namespace de\codenamephp\deploymentchecks\http\Test;
 
-use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
 use de\codenamephp\deploymentchecks\http\Test\Result\HttpTestResult;
 use Psr\Http\Message\ResponseInterface;
 
-final class StatusCode implements TestInterface {
+/**
+ * Does a strict comparison of the status code of the response with the expected one
+ *
+ * @psalm-api
+ */
+final readonly class StatusCode implements TestInterface {
 
-  public function __construct(public readonly int $expectedResponseCode) {}
+  public function __construct(public int $expectedResponseCode) {}
 
-  public function test(ResponseInterface $response) : ResultInterface {
+  public function test(ResponseInterface $response) : HttpTestResult {
     return new HttpTestResult(
       $response->getStatusCode() === $this->expectedResponseCode,
       sprintf("Expected response code '%d' got '%d'", $this->expectedResponseCode, $response->getStatusCode()),
