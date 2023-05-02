@@ -25,4 +25,4 @@ jobs:
     uses: codenamephp/workflows.php/.github/workflows/ci.yml@1
     with:
       php-versions: '["8.2"]'
-      test-command: 'docker-compose up integrationtests.webserver -d --wait --build --force-recreate --remove-orphans && composer ci-all'
+      test-command: 'printenv && docker-compose up integrationtests.webserver -d --wait --build --force-recreate --remove-orphans && composer ci-all'
