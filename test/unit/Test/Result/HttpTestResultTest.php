@@ -15,23 +15,29 @@
  *  limitations under the License.
  */
 
-namespace de\codenamephp\deploymentchecks\http\Test\Result;
+namespace de\codenamephp\deploymentchecks\http\unit\Test\Result;
 
-use de\codenamephp\deploymentchecks\base\Check\Result\ResultInterface;
-use de\codenamephp\deploymentchecks\base\Check\Result\WithMessageInterface;
+use de\codenamephp\deploymentchecks\http\Test\Result\HttpTestResult;
+use PHPUnit\Framework\TestCase;
 
-/**
- * A result that is returned by the http test check and contains the result of the test and a message, e.g. what the test tried to assert
- */
-final readonly class HttpTestResult implements ResultInterface, WithMessageInterface {
+final class HttpTestResultTest extends TestCase {
 
-  public function __construct(public bool $successful, public string $message) {}
+  public function test__construct() : void {
+    $sut = new HttpTestResult(true, 'message');
 
-  public function successful() : bool {
-    return $this->successful;
+    self::assertTrue($sut->successful);
+    self::assertSame('message', $sut->message);
   }
 
-  public function message() : string {
-    return $this->message;
+  public function testMessage() : void {
+    $sut = new HttpTestResult(true, 'message');
+
+    self::assertSame('message', $sut->message());
+  }
+
+  public function testSuccessful() : void {
+    $sut = new HttpTestResult(true, 'message');
+
+    self::assertTrue($sut->successful());
   }
 }
