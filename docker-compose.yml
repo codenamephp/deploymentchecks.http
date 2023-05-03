@@ -25,9 +25,9 @@ services:
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
   integrationtests.webserver:
-    image: webdevops/nginx:alpine
+    image: nginx:alpine
     volumes:
-      - ./docker/integrationtests:/app
+      - ./docker/integrationtests:/usr/share/nginx/html:ro
     ports:
       - "${INTEGRATION_TESTS_LOCAL_PORT_HTTP:-}:80"
       - "${INTEGRATION_TESTS_LOCAL_PORT_HTTPS:-}:443"
