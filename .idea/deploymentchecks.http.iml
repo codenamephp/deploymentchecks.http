@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="de\codenamephp\deploymentchecks\http\" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\http\test\integration\" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\http\test\unit\" />
-      <sourceFolder url="file://$MODULE_DIR$/testHelper" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\http\testHelper\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codenamephp/deploymentchecks.base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
@@ -19,6 +19,11 @@
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/.logs" />
       <excludeFolder url="file://$MODULE_DIR$/docker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/dom-crawler" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

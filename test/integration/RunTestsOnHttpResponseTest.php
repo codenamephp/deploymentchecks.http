@@ -21,6 +21,7 @@ use de\codenamephp\deploymentchecks\base\Check\Collection\SequentialCheckCollect
 use de\codenamephp\deploymentchecks\base\Check\Result\Collection\ResultCollection;
 use de\codenamephp\deploymentchecks\http\HttpCheckResult;
 use de\codenamephp\deploymentchecks\http\RunTestsOnHttpResponse;
+use de\codenamephp\deploymentchecks\http\Test\CssSelectorExists;
 use de\codenamephp\deploymentchecks\http\Test\Result\HttpTestResult;
 use de\codenamephp\deploymentchecks\http\Test\StatusCode;
 use de\codenamephp\deploymentchecks\http\testHelper\BaseUri;
@@ -34,6 +35,7 @@ final class RunTestsOnHttpResponseTest extends TestCase {
       new Request('GET', new BaseUri() . '/test.html'),
       'Test',
       new StatusCode(200),
+      new CssSelectorExists('body > h1'),
     );
 
     $result = $check->run();

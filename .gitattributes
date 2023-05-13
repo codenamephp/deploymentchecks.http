@@ -15,3 +15,5 @@
 /psalm.xml export-ignore
 
 *.php text=auto eol=lf
+*.sh text=auto eol=lf
+/run text=auto eol=lf
