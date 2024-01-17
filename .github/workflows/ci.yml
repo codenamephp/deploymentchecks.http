@@ -19,7 +19,7 @@ jobs:
   ci:
     uses: codenamephp/workflows.php/.github/workflows/ci.yml@1
     with:
-      php-versions: '["8.2"]'
+      php-versions: '["8.2","8.3"]'
       test-command: |
         INTEGRATION_TESTS_LOCAL_PORT_HTTP=80 \
         INTEGRATION_TESTS_LOCAL_PORT_HTTPS=443 \
