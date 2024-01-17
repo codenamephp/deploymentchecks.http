@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="de\codenamephp\deploymentchecks\http\" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\http\test\integration\" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\http\test\unit\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/testHelper" isTestSource="true" packagePrefix="de\codenamephp\deploymentchecks\http\testHelper\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codenamephp/deploymentchecks.base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />

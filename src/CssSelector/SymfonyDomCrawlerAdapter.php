@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /*
- *  Copyright 2023 Bastian Schwarz <bastian@codename-php.de>.
+ *  Copyright 2024 Bastian Schwarz <bastian@codename-php.de>.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 
 namespace de\codenamephp\deploymentchecks\http\CssSelector;
 
+use Symfony\Component\CssSelector\CssSelectorConverter;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
@@ -27,6 +28,6 @@ final readonly class SymfonyDomCrawlerAdapter implements CssSelectorInterface {
   public function __construct(public Crawler $crawler) {}
 
   public function exists(string $selector) : bool {
-    return $this->crawler->filter($selector)->count() > 0;
+    return class_exists(CssSelectorConverter::class) && $this->crawler->filter($selector)->count() > 0;
   }
 }
